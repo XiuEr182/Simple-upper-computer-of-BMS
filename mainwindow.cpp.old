@@ -1,0 +1,54 @@
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void init(void)
+{
+
+}
+
+void MainWindow::on_ButtonOpenCAN_clicked()
+{
+    int deviceTye,device,chanel;
+
+        deviceTye = 4;//USBCAN2
+        device = 0;
+        chanel = 0;
+    if(RET_ERR == CanManager::GetInstance()->openCan(deviceTye,device,chanel))
+    {
+        QMessageBox::warning(this,"失败","打开can失败");
+        return;
+    }
+
+    QPalette palette;palette.setColor(QPalette::WindowText,Qt::red);
+    ui->ConnectState->setPalette(palette);
+    ui->ConnectState->setText("已连接");
+}
+
+void MainWindow::on_ButtonCloseCAN_clicked()
+{
+    int deviceTye,device;
+
+        deviceTye = 4;
+
+        device = 0;
+
+    if(RET_ERR == CanManager::GetInstance()->closeCan(deviceTye,device))
+    {
+        QMessageBox::warning(this,"失败","关闭can失败");
+    }
+    QPalette palette;palette.setColor(QPalette::WindowText,Qt::black);
+    ui->ConnectState->setPalette(palette);
+    ui->ConnectState->setText("未连接");
+}
