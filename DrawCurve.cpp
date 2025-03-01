@@ -24,40 +24,40 @@ DrawCurve::DrawCurve()
 
         chart->legend()->hide();
 
-        chart->setTitle("µçÑ¹ÇúÏß");
-        // Ìí¼ÓÒ»ÌõÇúÏß
+        chart->setTitle("ç”µå‹æ›²çº¿");
+        // æ·»åŠ ä¸€æ¡æ›²çº¿
         chart->addSeries(splineSeries);
-        // ÉèÖÃYÖáÏÔÊ¾¸ñÊ½
+        // è®¾ç½®Yè½´æ˜¾ç¤ºæ ¼å¼
         axisY->setLabelFormat("%.2f");
-        // ÉèÖÃYÖá±êÌâ
-        axisY->setTitleText("µçÑ¹£¨V£©");
-        // ÉèÖÃYÖá·¶Î§
+        // è®¾ç½®Yè½´æ ‡é¢˜
+        axisY->setTitleText("ç”µå‹ï¼ˆVï¼‰");
+        // è®¾ç½®Yè½´èŒƒå›´
         axisY->setRange(0, maxY);
-        // ÉèÖÃ Y Öá¿Ì¶È¼ä¸ôÎª 10
-        int yTickCount = static_cast<int>(maxY / 10) + 1 ; // ¼ÆËã¿Ì¶ÈÊıÁ¿
+        // è®¾ç½® Y è½´åˆ»åº¦é—´éš”ä¸º 10
+        int yTickCount = static_cast<int>(maxY / 10) + 1 ; // è®¡ç®—åˆ»åº¦æ•°é‡
         axisY->setTickCount(yTickCount);
-        // YÖá±êÌâÎ»ÖÃ£¨ÉèÖÃ×ø±êÖá·½Ïò£©
+        // Yè½´æ ‡é¢˜ä½ç½®ï¼ˆè®¾ç½®åæ ‡è½´æ–¹å‘ï¼‰
         chart->addAxis(axisY, Qt::AlignLeft);
-        // ½«splineSeries¸½ÓÚyÖáÉÏ
+        // å°†splineSeriesé™„äºyè½´ä¸Š
         splineSeries->attachAxis(axisY);
-        // ÉèÖÃxÖáÏÔÊ¾¸ñÊ½
+        // è®¾ç½®xè½´æ˜¾ç¤ºæ ¼å¼
         axisX->setLabelFormat("%.2f");
         axisX->setLabelsVisible(false);
-        // ÉèÖÃXÖá±êÌâ
-        axisX->setTitleText("Ê±¼ä£¨Ãë£© ");
-        axisX->setTickCount(11); // ÉèÖÃ¿Ì¶ÈÊıÁ¿
-        axisX->setRange(0, 1.0); // ÉèÖÃ·¶Î§
-        // XÖá±êÌâÎ»ÖÃ
+        // è®¾ç½®Xè½´æ ‡é¢˜
+        axisX->setTitleText("æ—¶é—´ï¼ˆç§’ï¼‰ ");
+        axisX->setTickCount(11); // è®¾ç½®åˆ»åº¦æ•°é‡
+        axisX->setRange(0, 1.0); // è®¾ç½®èŒƒå›´
+        // Xè½´æ ‡é¢˜ä½ç½®
         chart->addAxis(axisX, Qt::AlignBottom);
-        // ½«splineSeries¸½¼ÓÓÚXÖáÉÏ
+        // å°†splineSeriesé™„åŠ äºXè½´ä¸Š
         splineSeries->attachAxis(axisX);
-        // ½«Í¼±íµÄÄÚÈİÉèÖÃÔÚÍ¼±íÊÓÍ¼ÉÏ
+        // å°†å›¾è¡¨çš„å†…å®¹è®¾ç½®åœ¨å›¾è¡¨è§†å›¾ä¸Š
         chartView->setChart(chart);
-        // ÉèÖÃ¿¹¾â³İ
+        // è®¾ç½®æŠ—é”¯é½¿
         chartView->setRenderHint(QPainter::Antialiasing);
-        // ÉèÖÃÍ¼±íÊÓÍ¼ÎªÖĞĞÄ²¿¼ş
+        // è®¾ç½®å›¾è¡¨è§†å›¾ä¸ºä¸­å¿ƒéƒ¨ä»¶
         setCentralWidget(chartView);
-        // ½«Í¼±íÊÓÍ¼Ìí¼Óµ½ container_voltageinformation µÄ²¼¾ÖÖĞ
+        // å°†å›¾è¡¨è§†å›¾æ·»åŠ åˆ° container_voltageinformation çš„å¸ƒå±€ä¸­
         MainWindow::groupBoxLayout4->addWidget(chartView);
 
         chartView->setAlignment(Qt::AlignCenter);
@@ -71,17 +71,17 @@ DrawCurve::DrawCurve()
         axisCX = new QValueAxis();
         axisCY = new QValueAxis();
         Cchart->legend()->hide();
-        Cchart->setTitle("µçÁ÷ÇúÏß");
+        Cchart->setTitle("ç”µæµæ›²çº¿");
         Cchart->addSeries(CsplineSeries);
         axisCY->setLabelFormat("%.2f");
-        axisCY->setTitleText("µçÁ÷£¨A£©");
+        axisCY->setTitleText("ç”µæµï¼ˆAï¼‰");
         axisCY->setRange(-2, maxCY);
         axisCY->setTickCount(static_cast<int>(maxCY / 0.5) + 1);
         Cchart->addAxis(axisCY, Qt::AlignLeft);
         CsplineSeries->attachAxis(axisCY);
         axisCX->setLabelFormat("%.2f");
         axisCX->setLabelsVisible(false);
-        axisCX->setTitleText("Ê±¼ä£¨Ãë£©");
+        axisCX->setTitleText("æ—¶é—´ï¼ˆç§’ï¼‰");
         axisCX->setTickCount(11);
         axisCX->setRange(0, 1.0);
         Cchart->addAxis(axisCX, Qt::AlignBottom);
@@ -122,12 +122,12 @@ DrawCurve::~DrawCurve()
 
 void DrawCurve::drawvoltagecurve(float value)
 {
-    // ½«Êı¾İÌí¼Óµ½dataÖĞ
+    // å°†æ•°æ®æ·»åŠ åˆ°dataä¸­
     data.append(value);
-    // µ±´¢´æÊı¾İµÄ¸öÊı´óÓÚ×î´óÖµµÄÊ±ºò£¬°ÑµÚÒ»¸öÊı¾İÉ¾³ı
+    // å½“å‚¨å­˜æ•°æ®çš„ä¸ªæ•°å¤§äºæœ€å¤§å€¼çš„æ—¶å€™ï¼ŒæŠŠç¬¬ä¸€ä¸ªæ•°æ®åˆ é™¤
     while (data.size() > maxSize)
     {
-        // ÒÆ³ıdataÖĞµÄµÚÒ»¸öÊı¾İ
+        // ç§»é™¤dataä¸­çš„ç¬¬ä¸€ä¸ªæ•°æ®
         data.removeFirst();
     }
 }
@@ -141,7 +141,7 @@ void DrawCurve::drawcurrentcurve(float value)
     }
 }
 
-////×ÜµçÑ¹Êı¾İ±£´æº¯Êı
+////æ€»ç”µå‹æ•°æ®ä¿å­˜å‡½æ•°
 //void DrawCurve::saveVoltageData(double value) {
 //    if (voltageStream)
 //    {
@@ -149,7 +149,7 @@ void DrawCurve::drawcurrentcurve(float value)
 //    }
 //}
 
-////×ÜµçÁ÷Êı¾İ±£´æº¯Êı
+////æ€»ç”µæµæ•°æ®ä¿å­˜å‡½æ•°
 //void DrawCurve::saveCurrentData(double value) {
 //    if (currentStream)
 //    {
@@ -166,9 +166,9 @@ void DrawCurve::drawcurrentcurve(float value)
 void DrawCurve::UpdateVolCurve(void)
 {
     splineSeries->clear();
-    // ¼ÆËãXÖáµãÓëµãÖ®¼äµÄ¼ä¾à
+    // è®¡ç®—Xè½´ç‚¹ä¸ç‚¹ä¹‹é—´çš„é—´è·
     double xSpace = maxX / (maxSize - 1);
-    // Ìí¼Óµã£¬xSpace * i±íÊ¾µÚi¸öµãµÄxÖáÎ»ÖÃ
+    // æ·»åŠ ç‚¹ï¼ŒxSpace * iè¡¨ç¤ºç¬¬iä¸ªç‚¹çš„xè½´ä½ç½®
     for (int i = 0; i < data.size(); ++i)
     {
         double xValue = static_cast<double>(i) / (maxSize - 1);

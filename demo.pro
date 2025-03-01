@@ -4,9 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-QT       += core gui
-QT       += charts
+
+QT += core gui charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,7 +23,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
-UI_DIR=./UI
+
 
 SOURCES += \
         main.cpp \
@@ -35,7 +34,9 @@ SOURCES += \
     batt.cpp \
     tempage.cpp \
     voltagepage.cpp \
-    DrawCurve.cpp
+    DrawCurve.cpp \
+    DiagCurve.cpp \
+    diagpage.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -47,16 +48,22 @@ HEADERS += \
     batt.h \
     tempage.h \
     voltagepage.h \
-    DrawCurve.h
+    DrawCurve.h \
+    diagpage.h \
+    DiagCurve.h
 
 FORMS += \
     mainwindow.ui \
     tempage.ui \
-    voltagepage.ui
+    voltagepage.ui \
+    DiagPage.ui
 
+win32: message("Library path: $$PWD")
 win32: LIBS += -L$$PWD/./ -lControlCAN
+
 
 INCLUDEPATH += $$PWD/.
 DEPENDPATH += $$PWD/.
+
 
 #CONFIG += c++11

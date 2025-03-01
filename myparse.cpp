@@ -1,4 +1,4 @@
-#include "myparse.h"
+﻿#include "myparse.h"
 
 MyParse::MyParse(QObject *parent) : QObject(parent)
 {
@@ -152,7 +152,7 @@ void MyParse::getCanDataSlot(PVCI_CAN_OBJ objs,int count)
 
 //            val_unint16=(uint16_t)((objs[i].Data[5] ) | (objs[i].Data[6] << 16));
 //            val_unint16=val_unint16*0.01-128;
-//            emit showBat9Temp(val_unint16);
+//            emit showBat9Temp(val_unint16);ghd
 
             break;
         }

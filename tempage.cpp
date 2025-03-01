@@ -38,7 +38,6 @@ tempage::tempage(QWidget *parent) :
     //lcd_t5
     ui->lcd_t5->setSegmentStyle(QLCDNumber::Flat);/* 设置样式 */
     ui->lcd_t5->setSmallDecimalPoint(true); // 设置小数点显示格式为小数点右侧有两个数字
-//    // 设置 LCD 数字显示的初始值
 //    double initialValue_t5= 0.13; // 设置初始值
 //    ui->lcd_t5->display(initialValue_t5); // 显示初始值
 

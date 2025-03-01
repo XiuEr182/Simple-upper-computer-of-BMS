@@ -19,8 +19,9 @@
 #include "mycanthread.h"
 #include "myparse.h"
 #include "DrawCurve.h"
+#include "diagpage.h"
 
-QT_CHARTS_USE_NAMESPACE
+
 #pragma execution_character_set("utf-8")
 
 namespace Ui {
@@ -41,20 +42,22 @@ private:
     batt *batteryWidget;
     voltagepage *configWindow = new voltagepage;
     tempage *configWindow2 = new tempage;
+    DiagPage *DiagWindow = new DiagPage;
     void init(void);
-   //CAN1¶ÔÏóÏà¹Ø
+   //CAN1å¯¹è±¡ç›¸å…³
     MyParse MyPase;
 
 private slots:
     void on_ButtonOpenCAN_clicked();
     void on_ButtonCloseCAN_clicked();
     void receivedvolData(float value);// voltage DrawCurve
-    void receivedcurData(float value);//µçÁ÷ÇúÏßÊı¾İ½ÓÊÕ
-    void TVupdateValue(float value);//×ÜµçÑ¹Êı¾İ½ÓÊÕ
-    void TAupdateValue(float value);//×ÜµçÁ÷Êı¾İ½ÓÊÕ
-    void SOPupdateValue(float value);//SOPÊı¾İ½ÓÊÕ
+    void receivedcurData(float value);//ç”µæµæ›²çº¿æ•°æ®æ¥æ”¶
+    void TVupdateValue(float value);//æ€»ç”µå‹æ•°æ®æ¥æ”¶
+    void TAupdateValue(float value);//æ€»ç”µæµæ•°æ®æ¥æ”¶
+    void SOPupdateValue(float value);//SOPæ•°æ®æ¥æ”¶
     void on_SingleVoltageButton_clicked();
     void on_SingleTemButton_clicked();
+    void  on_SingleDiagPage_clicked();
 };
 
 #endif // MAINWINDOW_H

@@ -13,6 +13,7 @@
 #include <QTimer>
 
 
+
 class DrawCurve : public QMainWindow
 {
     Q_OBJECT

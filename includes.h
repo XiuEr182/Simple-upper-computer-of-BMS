@@ -7,7 +7,7 @@
 #include <QDebug>
 #include <QMetaType>
 #include <QMessageBox>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QPalette>
 #include <QDateTime>
 #include "ControlCAN.h"

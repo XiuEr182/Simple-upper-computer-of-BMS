@@ -217,3 +217,9 @@ void MainWindow::on_ButtonCloseCAN_clicked()
 
 
 
+
+void MainWindow::on_SingleDiagPage_clicked()
+{
+    DiagWindow->show();
+}
+
